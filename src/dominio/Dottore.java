@@ -1,5 +1,6 @@
 package dominio;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 public class Dottore extends User {

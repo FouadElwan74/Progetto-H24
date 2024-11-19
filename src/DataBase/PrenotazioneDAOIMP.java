@@ -14,8 +14,8 @@ public class PrenotazioneDAOIMP implements PrenotazioneDAO {
 
     private String tableName;
 
-    public PrenotazioneDAOIMP(String Prenotazione) {
-        this.tableName = Prenotazione; // "successivi_denti", "successivi_occhi", "successivi_ortopedico"
+    public PrenotazioneDAOIMP(String tableName) {
+        this.tableName = tableName; // "successivi_denti", "successivi_occhi", "successivi_ortopedico"
     }
 
 		

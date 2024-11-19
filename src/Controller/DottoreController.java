@@ -1,11 +1,6 @@
 package Controller;
 
-import view.Registrazione;
 import DataBase.UserDAO;
-
-import view.HomePageDentista;
-import view.HomePageOculista;
-import view.HomePageOrtopedico;
 import dominio.User;
 import dominio.Visiti;
 import servizi.Servizi;

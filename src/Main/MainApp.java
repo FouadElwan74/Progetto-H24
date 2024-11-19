@@ -2,7 +2,6 @@ package Main;
 
 
 import view.Login;
-import view.Registrazione;
 
 public class MainApp {
 	public static void main(String[] args) {

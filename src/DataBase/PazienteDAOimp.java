@@ -12,8 +12,8 @@ public class PazienteDAOimp implements PazienteDAO {
     private String tableName;
 
     // Costruttore che prende il tipo di paziente
-    public PazienteDAOimp(String Paziente) {
-        this.tableName = "Paziente_" + Paziente; // Imposta il nome della tabella specifica
+    public PazienteDAOimp(String tipoPaziente) {
+        this.tableName = "paziente_" + tipoPaziente; // Imposta il nome della tabella specifica
     }
 
     public void addPaziente(Paziente paziente) throws SQLException {

@@ -28,7 +28,7 @@ public class DataBase {
             stmt.executeUpdate(SQL);
         
 
-            String insertSQL = "INSERT INTO Dottore (Email, Password, Nome, Cognome, Codice_Fiscale, Data_Nascita, Indirizzo, ID, Tipo_utente) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO persone (Email, Password, Nome, Cognome, Codice_Fiscale, Data_Nascita, Indirizzo, ID, Tipo_utente) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement pstmt = con.prepareStatement(insertSQL);
          
             pstmt.setString(1, "");

@@ -7,30 +7,22 @@ public class Visiti {
     private String data;
     private String ora;
     private String codiceFiscale;
-    private String Tipo;
+    //private String Tipo;
 
-    public Visiti(String cognome, String nome, String data, String ora, String codiceFiscale, String Tipo) {
+    public Visiti(String cognome, String nome, String data, String ora, String codiceFiscale) {
         this.cognome = cognome;
         this.nome = nome;
         this.data = data;
         this.ora = ora;
         this.codiceFiscale = codiceFiscale;
-        this.Tipo = Tipo;
+        //this.Tipo = Tipo;
     }
 
     public String getCognome() {
         return cognome;
     }
 
-    public String getTipo() {
-		return Tipo;
-	}
-
-	public void setTipo(String tipo) {
-		Tipo = tipo;
-	}
-
-	public String getNome() {
+    public String getNome() {
         return nome;
     }
 

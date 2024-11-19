@@ -9,12 +9,12 @@ public class OrarioDottoreDAOimp implements OrarioDottoreDAO {
 
     // Costruttore che accetta il tipo di specializzazione
     public OrarioDottoreDAOimp(String tipoSpecializzazione) {
-        this.tableName = "Orario_Dottore_" + tipoSpecializzazione;
+        this.tableName = "orario_dottore_" + tipoSpecializzazione;
     }
 
     @Override
     public void addOrarioDottore(String cognome, String nome, String email, String numeroDiTelefono, String orario) throws SQLException {
-        String sql = "INSERT INTO " + tableName + " (COGNOME, NOME, EMAIL, NUMERO_DI_TELEFONO, ORARIO_DOTTORE) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO " + tableName + " (COGNOME, NOME, EMAIL, NUMERO_DI_TELEFONO, ORARIO) VALUES (?, ?, ?, ?, ?)";
         
         try (Connection conn = DataBaseConnection.getInstance();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

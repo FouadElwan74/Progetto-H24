@@ -13,3 +13,4 @@ public interface UserDAO <Login>{
 }
 
 
+//String tipoUtente, String idUtente,

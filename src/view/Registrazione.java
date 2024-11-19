@@ -5,7 +5,6 @@ package view;
 import javax.swing.*;
 
 import Controller.DottoreController;
-
 import dominio.User;
 
 import java.awt.*;
@@ -75,14 +74,18 @@ public class Registrazione extends JFrame implements ActionListener {
         
     }
 
+   /* public Registrazione(String email2, char[] password2, String nome2, String cognome2, String codiceFiscale2,
+			String dataNascita2, String indirizzio2) {
+		// TODO Auto-generated constructor stub
+	}
+    */
+    
+    
     public Registrazione(String email2, char[] password2, String nome2, String cognome2, String codiceFiscale2,
 			String dataNascita2, String indirizzio2) {
 		// TODO Auto-generated constructor stub
 	}
-    
-    
-    
-   
+
 	public void chiudiRegistrazione(JFrame frame) {
         frame.dispose();  // Chiude la finestra corrente
         System.out.println("Finestra chiusa.");
@@ -277,12 +280,6 @@ public class Registrazione extends JFrame implements ActionListener {
             }
 		
 		
-		
-		
-		
-		
-		
-
                 
                 
         
@@ -290,7 +287,7 @@ public class Registrazione extends JFrame implements ActionListener {
             if (emailField.getText().isEmpty() || passwordField.getPassword().length == 0 || nomeField.getText().isEmpty() ||
                 cognomeField.getText().isEmpty() || codiceFiscaleField.getText().isEmpty() || dataNascitaField.getText().isEmpty() ||
                 indirizzioField.getText().isEmpty() || idField.getText().isEmpty()) {
-              //  JOptionPane.showMessageDialog(this, "Compila tutti i campi obbligatori!", "Errore", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Compila tutti i campi obbligatori!", "Errore", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
             return true;
