@@ -12,7 +12,7 @@ public class REGDAOimp implements RegistrazioneDAO {
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/Dottore", "root", "10445536");
     }
 	public void registraUtente(User user) throws SQLException {
-	    String insertSQL = "INSERT INTO Persone (Email, Password, Nome, Cognome, Codice_Fiscale, Data_di_Nascita, Indirizzio, Tipo_utente, ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	    String insertSQL = "INSERT INTO Dottore (Email, Password, Nome, Cognome, Codice_Fiscale, Data_di_Nascita, Indirizzio, Tipo_utente, ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	    try (Connection con = getConnection();
 	         PreparedStatement pstmt = con.prepareStatement(insertSQL)) {
 

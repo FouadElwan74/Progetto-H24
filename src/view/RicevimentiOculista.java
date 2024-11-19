@@ -40,11 +40,11 @@ import dominio.Ricevimenti;
         tableModel = new DefaultTableModel(columnNames, 0);
         table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(0, 80, 800, 600);
+        scrollPane.setBounds(0, 80, 800, 400);
 
-        buttonAddRow.setBounds(0, 715, 150, 30);
-        buttonDeleteRow.setBounds(170, 715, 150, 30);
-        buttonSave.setBounds(350, 715, 150, 30);
+        buttonAddRow.setBounds(0, 500, 150, 30);
+        buttonDeleteRow.setBounds(170, 500, 150, 30);
+        buttonSave.setBounds(350, 500, 150, 30);
        
         RecivimentiOculista.setBounds(0, 30, 600, 50);
         setButtonStyle(buttonAddRow);

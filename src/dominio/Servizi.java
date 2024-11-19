@@ -10,8 +10,10 @@ public class Servizi {
 	    private String trattamento;
 	    private String codiceFiscale;
 	    
-	    private RegistrazioneDAO registrazioneDAO; // Per la registrazione degli utenti
-	    private ServiziDAO serviziDAO; // DAO per i servizi
+	    
+		private RegistrazioneDAO registrazioneDAO; // Per la registrazione degli utenti
+	  
+		private ServiziDAO serviziDAO; // DAO per i servizi
 
 	    public Servizi( String prezzo, String descrizioneMalattia, String trattamento, String codiceFiscale) {
 	      

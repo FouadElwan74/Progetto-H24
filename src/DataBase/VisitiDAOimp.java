@@ -47,7 +47,8 @@ public class VisitiDAOimp implements VisitiDAO {
                         rs.getString("nome"),
                         rs.getString("data"),
                         rs.getString("ora"),
-                        rs.getString("codice_fiscale")
+                        rs.getString("codice_fiscale"),
+                        rs.getString("Tipo")
                     ));
                 }
             }

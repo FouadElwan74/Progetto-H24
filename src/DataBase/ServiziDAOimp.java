@@ -11,7 +11,7 @@ public class ServiziDAOimp implements ServiziDAO {
     private String tableName;
 
     public ServiziDAOimp(String tipo) {
-        this.tableName = "servicepanel_" + tipo;
+        this.tableName = "Servizi_" + tipo;
     }
 
     @Override

@@ -5,7 +5,7 @@ package view;
 import javax.swing.*;
 
 import Controller.DottoreController;
-import DataBase.RegistrazioneDAO;
+
 import dominio.User;
 
 import java.awt.*;
@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.sql.SQLException;
 
 
 
@@ -23,9 +22,6 @@ public class Registrazione extends JFrame implements ActionListener {
 
 	private DottoreController controller;
 	
-	
-	
-    
     
     // Pulsanti e Checkbox
     JButton chiuso = new JButton("CHIUSO");
@@ -63,7 +59,7 @@ public class Registrazione extends JFrame implements ActionListener {
 
 
     public Registrazione() {
-        controller = new DottoreController(null);
+    	
         setTitle("REGISTRAZIONE");
         setSize(600, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,7 +69,7 @@ public class Registrazione extends JFrame implements ActionListener {
         addComponentsToPanel();
         setComponentStyles();
         addActionListeners();
-
+        registraUtente();
         add(panel);
         
         
@@ -83,6 +79,14 @@ public class Registrazione extends JFrame implements ActionListener {
 			String dataNascita2, String indirizzio2) {
 		// TODO Auto-generated constructor stub
 	}
+    
+    
+    
+   
+	public void chiudiRegistrazione(JFrame frame) {
+        frame.dispose();  // Chiude la finestra corrente
+        System.out.println("Finestra chiusa.");
+    }
 
 	private void addComponentsToPanel() {
         // Layout per posizionamento componenti
@@ -210,7 +214,6 @@ public class Registrazione extends JFrame implements ActionListener {
         panel.repaint();
 
       
-
         
     }
 
@@ -235,7 +238,7 @@ public class Registrazione extends JFrame implements ActionListener {
                 passwordField.setEchoChar('*');
             }
         } else if (e.getSource() == chiuso) {
-            controller.chiudiRegistrazione(this);
+            chiudiRegistrazione(this);
         } else if (e.getSource() == conferma) {
         	if (e.getSource() == conferma) {
         		registraUtente();
@@ -245,11 +248,14 @@ public class Registrazione extends JFrame implements ActionListener {
     }
     
 
+    
+    
+    
 		private void registraUtente() {
             String tipoUtente = ortopedicoRadio.isSelected() ? "ORTOPEDICO" : oculistaRadio.isSelected() ? "OCULISTA" : dentistaRadio.isSelected() ? "DENTISTA" : null;
             
             if (checkRequiredFields()) {
-                try {
+                
                     User user = new User(
                             emailField.getText().trim(),
                             new String(passwordField.getPassword()).trim(),
@@ -261,23 +267,30 @@ public class Registrazione extends JFrame implements ActionListener {
                             tipoUtente,
                             idField.getText().trim()
                     );
-                    if (RegistrazioneDAO.registraUtente(user)) {
-                        JOptionPane.showMessageDialog(this, "Registrazione avvenuta con successo!");
-                       
-                        dispose();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Errore durante la registrazione.", "Errore", JOptionPane.ERROR_MESSAGE);
-                    }
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(this, "Errore: " + ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-                }
+                    
+                    
+             controller.conregUtente(user);       
+                    
+                    
+                    
+            } 
             }
-        }
+		
+		
+		
+		
+		
+		
+		
+
+                
+                
+        
         private boolean checkRequiredFields() {
             if (emailField.getText().isEmpty() || passwordField.getPassword().length == 0 || nomeField.getText().isEmpty() ||
                 cognomeField.getText().isEmpty() || codiceFiscaleField.getText().isEmpty() || dataNascitaField.getText().isEmpty() ||
                 indirizzioField.getText().isEmpty() || idField.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Compila tutti i campi obbligatori!", "Errore", JOptionPane.ERROR_MESSAGE);
+              //  JOptionPane.showMessageDialog(this, "Compila tutti i campi obbligatori!", "Errore", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
             return true;
